@@ -128,7 +128,7 @@ def save_coco_ground_truth_samples(
     specific_ids: Optional[List[int]] = None,
     specific_filename: Optional[str] = None,
     annotation_count_filter=None,
-    localization_filter: Optional[str] = None,
+    location_filter: Optional[str] = None,
     metadata_path: Optional[str] = None,
     show_bbox: bool = False,
     thickness: int = 3,
@@ -160,12 +160,15 @@ def save_coco_ground_truth_samples(
     elif metadata:
         filtered_ids = []
         for img_id, meta in metadata.items():
-            if localization_filter and meta.get("localization_general") != localization_filter:
+            if location_filter and meta.get("location_specific") != location_filter:
                 continue
+            # count filter (apply min and/or max if present)
             if annotation_count_filter:
-                count = meta.get("annotation_count", 0)
                 min_count, max_count = annotation_count_filter
-                if not (min_count <= count <= max_count):
+                count = int(meta.get("annotation_count", 0))
+                if (min_count is not None) and (count < min_count):
+                    continue
+                if (max_count is not None) and (count > max_count):
                     continue
             try:
                 filtered_ids.append(int(img_id))
@@ -289,7 +292,7 @@ if __name__ == "__main__":
     parser.add_argument("--specific-ids", nargs="*", help="List of image ids (space/comma separated)")
     parser.add_argument("--specific-filename", type=str, default=None)
     parser.add_argument("--metadata-path", type=str, default=None)
-    parser.add_argument("--localization", type=str, default=None)
+    parser.add_argument("--location", type=str, default=None)
     parser.add_argument("--min-ann-count", type=int, default=None)
     parser.add_argument("--max-ann-count", type=int, default=None)
     parser.add_argument("--show-bbox", action="store_true")
@@ -300,7 +303,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     annotation_count_filter = None
-    if args.min_ann_count is not None and args.max_ann_count is not None:
+    if args.min_ann_count is not None or args.max_ann_count is not None:
         annotation_count_filter = (args.min_ann_count, args.max_ann_count)
 
     save_coco_ground_truth_samples(
@@ -312,7 +315,7 @@ if __name__ == "__main__":
         specific_ids=_parse_specific_ids(args.specific_ids),
         specific_filename=args.specific_filename,
         metadata_path=args.metadata_path,
-        localization_filter=args.localization,
+        location_filter=args.location,
         annotation_count_filter=annotation_count_filter,
         show_bbox=args.show_bbox,
         thickness=args.thickness,
@@ -329,6 +332,14 @@ python show_samples.py \
   --specific-ids 832,2660,5936,6359,7132,7469 \
   --metadata-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/metadata.json
 
+DIAGRAM SAMPLES:
+python show_samples.py \
+  --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/annotations/instances_train.json \
+  --image-dir /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/train \
+  --output-dir ./output/gt_samples/ \
+  --specific-ids 1068,1195,1251 \
+  --metadata-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/metadata.json
+
 PAPER INPAINTING EXAMPLE:
 python show_samples.py \
   --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/annotations/instances_train.json  \
@@ -342,9 +353,9 @@ SPECIFIC PART:
 python show_samples.py \
   --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/annotations/instances_train.json \
   --image-dir /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/train \
-  --output-dir ./output/gt_samples/chest \
+  --output-dir ./output/gt_samples/back \
   --seed 42 \
-  --localization chest \
+  --location back \
   --min-ann-count 2 \
   --metadata-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/metadata.json
 """
