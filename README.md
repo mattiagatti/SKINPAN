@@ -1,8 +1,8 @@
-# 🧠 Training Workflow for MaskDINO & YOLO
+# 🧠 Training Workflow for Mask DINO & YOLO
 
 This repository provides code for training and inference on the SKINPAN dataset using:
 
-- [**MaskDINO**](https://github.com/IDEA-Research/MaskDINO): A state-of-the-art transformer-based model for instance segmentation, built on [Detectron2](https://github.com/facebookresearch/detectron2).
+- [**Mask DINO**](https://github.com/IDEA-Research/MaskDINO): A state-of-the-art transformer-based model for instance segmentation, built on [Detectron2](https://github.com/facebookresearch/detectron2).
 - [**YOLO (Ultralytics)**](https://www.ultralytics.com/yolo): A real-time object detection model, using the [Ultralytics](https://github.com/ultralytics/ultralytics) framework.
 
 ---
@@ -104,7 +104,7 @@ python show_samples.py \
   --metadata-path /path/to/SKINPAN/metadata.json
 ```
 
-### MaskDINO
+### Mask DINO
 
 ```bash
 python train_maskdino.py
@@ -120,7 +120,7 @@ python train_yolo.py
 
 ## 🔍 Inference
 
-### MaskDINO
+### Mask DINO
 
 ```bash
 python visualize.py --model maskdino
@@ -146,5 +146,5 @@ python visualize.py --model yolo
 
 This project is licensed under the **Apache 2.0 License**, inherited from:
 
-- [MaskDINO](https://github.com/IDEA-Research/MaskDINO)
+- [Mask DINO](https://github.com/IDEA-Research/MaskDINO)
 - [Detectron2](https://github.com/facebookresearch/detectron2)
