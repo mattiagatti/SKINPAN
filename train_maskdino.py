@@ -62,7 +62,7 @@ IMS_PER_BATCH = 4
 NUM_WORKERS = 4
 CONFIG_PATH = "MaskDINO/configs/coco/instance-segmentation/swin/maskdino_R50_bs16_50ep_4s_dowsample1_2048.yaml"
 PRETRAINED_WEIGHTS = "maskdino_swinl_50ep_300q_hid2048_3sd1_instance_maskenhanced_mask52.3ap_box59.0ap.pth"
-DATASET_PATH = "/home/jovyan/nfs/mgatti/datasets/skin_lesion_dataset/coco/"
+DATASET_PATH = "/home/jovyan/nfs/mgatti/datasets/SKINPAN/"
 
 torch.cuda.empty_cache()
 

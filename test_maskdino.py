@@ -25,7 +25,7 @@ from maskdino.config import add_maskdino_config
 # -------------------------------
 CONFIG_PATH = "MaskDINO/configs/coco/instance-segmentation/swin/maskdino_R50_bs16_50ep_4s_dowsample1_2048.yaml"
 BEST_MODEL_PATH = "./output/best_model.pth"
-DATASET_PATH = "/home/jovyan/nfs/mgatti/datasets/skin_lesion_dataset/coco/"
+DATASET_PATH = "/home/jovyan/nfs/mgatti/datasets/SKINPAN/"
 OUTPUT_DIR = "./output/test"
 BATCH_SIZE = 4
 NUM_WORKERS = 4

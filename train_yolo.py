@@ -5,7 +5,7 @@ from ultralytics.utils.checks import check_yaml
 # Configuration
 GPU = 0
 MODEL_NAME = "yolo11x-seg.pt"
-DATA_YAML = "/home/jovyan/nfs/mgatti/datasets/skin_lesion_dataset/yolo/skin_lesion.yaml"
+DATA_YAML = "/home/jovyan/nfs/mgatti/datasets/SKINPAN/yolo/skin_lesion.yaml"
 
 
 def train_yolo():

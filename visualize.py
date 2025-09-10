@@ -190,8 +190,8 @@ if __name__ == "__main__":
         register_coco_instances(
             name=dataset_name,
             metadata={},
-            json_file="/home/jovyan/nfs/mgatti/datasets/skin_lesion_dataset/coco/annotations/instances_test.json",
-            image_root="/home/jovyan/nfs/mgatti/datasets/skin_lesion_dataset/coco/test/"
+            json_file="/home/jovyan/nfs/mgatti/datasets/SKINPAN/annotations/instances_test.json",
+            image_root="/home/jovyan/nfs/mgatti/datasets/SKINPAN/test/"
         )
 
         cfg = get_cfg()
@@ -216,7 +216,7 @@ if __name__ == "__main__":
             model_type="yolo",
             model_config={
                 "model_path": "runs/detect/skin_lesion_yolo8x-seg/weights/best.pt",
-                "yaml_path": "/home/jovyan/nfs/mgatti/datasets/skin_lesion_dataset/yolo/skin_lesion.yaml"
+                "yaml_path": "/home/jovyan/nfs/mgatti/datasets/SKINPAN/yolo/skin_lesion.yaml"
             },
             output_dir="predictions_visualization/yolo",
             annotation_type=annotation_type

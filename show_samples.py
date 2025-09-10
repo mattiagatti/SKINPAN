@@ -326,24 +326,24 @@ if __name__ == "__main__":
 """
 PAPER SAMPLES:
 python show_samples.py \
-  --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/annotations/instances_train.json \
-  --image-dir /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/train \
+  --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/annotations/instances_train.json \
+  --image-dir /home/jovyan/nfs/mgatti/datasets/SKINPAN/train \
   --output-dir ./output/gt_samples/ \
   --specific-ids 832,2660,5936,6359,7132,7469 \
   --metadata-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/metadata.json
 
 DIAGRAM SAMPLES:
 python show_samples.py \
-  --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/annotations/instances_train.json \
-  --image-dir /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/train \
+  --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/annotations/instances_train.json \
+  --image-dir /home/jovyan/nfs/mgatti/datasets/SKINPAN/train \
   --output-dir ./output/gt_samples/ \
   --specific-ids 1068,1195,1251 \
   --metadata-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/metadata.json
 
 PAPER INPAINTING EXAMPLE:
 python show_samples.py \
-  --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/annotations/instances_train.json  \
-  --image-dir /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/train \
+  --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/annotations/instances_train.json  \
+  --image-dir /home/jovyan/nfs/mgatti/datasets/SKINPAN/train \
   --output-dir ./output/gt_samples_bbox/ \
   --specific-ids 660,1351 \
   --metadata-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/metadata.json \
@@ -351,8 +351,8 @@ python show_samples.py \
 
 SPECIFIC PART:
 python show_samples.py \
-  --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/annotations/instances_train.json \
-  --image-dir /home/jovyan/nfs/mgatti/datasets/SKINPAN/coco/train \
+  --annotation-path /home/jovyan/nfs/mgatti/datasets/SKINPAN/annotations/instances_train.json \
+  --image-dir /home/jovyan/nfs/mgatti/datasets/SKINPAN/train \
   --output-dir ./output/gt_samples/back \
   --seed 42 \
   --location back \
