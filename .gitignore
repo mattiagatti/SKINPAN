@@ -3,6 +3,7 @@
 output
 predictions_visualization
 runs
+SKINPAN
 *.csv
 *.pt
 *.pth

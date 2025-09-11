@@ -7,8 +7,8 @@ from pycocotools.cocoeval import COCOeval
 # === CONFIGURATION ===
 GPU = 0
 model_path = Path("./runs/segment/skin_lesion_yolo11x-seg/weights/best.pt")
-data_yaml = Path("/home/jovyan/nfs/mgatti/datasets/SKINPAN/yolo/skin_lesion.yaml")
-gt_json = Path("/home/jovyan/nfs/mgatti/datasets/SKINPAN/annotations/instances_test.json")
+data_yaml = Path("./SKINPAN/yolo/skin_lesion.yaml")
+gt_json = Path("./SKINPAN/annotations/instances_test.json")
 pred_json = Path("./runs/segment/val/predictions.json")
 
 
