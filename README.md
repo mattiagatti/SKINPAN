@@ -55,7 +55,7 @@ conda install -c nvidia/label/cuda-12.1.1 cuda-toolkit
 ```bash
 git clone https://github.com/facebookresearch/detectron2.git
 cd detectron2
-pip install .
+pip install . --no-build-isolation
 cd ..
 ```
 
