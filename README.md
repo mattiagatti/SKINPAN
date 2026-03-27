@@ -76,6 +76,14 @@ cd ../../../../..
 
 ## 📥 Pre-trained Weights
 
+Create a Kaggle API token from: https://www.kaggle.com/settings
+
+Then export:
+
+```bash
+export KAGGLE_API_TOKEN=KGAT_...
+```
+
 Download pre-trained weights from Kaggle:
 
 ```bash
